@@ -6,144 +6,50 @@ angular.module('scheduleApp', ['firebase'])
   var syncObject = fb.$asObject();
   syncObject.$bindTo($scope, 'days');
 
-  $scope.reset = function(){
+  $scope.reset = function() {
+
     fb.$set({
-      a:{
-        name:'Tuesday',
-        slots:{
-          0:{
-            time:'9:00am',
-            booked:false
+      tuesday: {
+        name: 'Tuesday',
+        slots: {
+          0900: {
+            time: '9:00am',
+            booked: false
           },
-          2:{
-            time:'10:00am',
-            booked:false
-          },
-          3:{
-            time:'11:00am',
-            booked:false
-          },
-          4:{
-            time:'12:00pm',
-            booked:false
-          },
-          5:{
-            time:'1:00pm',
-            booked:false
-          },
-          6:{
-            time:'2:00pm',
-            booked:false
-          },
-          7:{
-            time:'3:00pm',
-            booked:false
-          },
-          8:{
-            time:'4:00pm',
-            booked:false
-          },
-          9:{
-            time:'5:00pm',
-            booked:false
-          },
-          10:{
-            time:'6:00pm',
-            booked:false
+          0110: {
+            time: '11:00am',
+            booked: false
           }
         }
       },
-      b:{
-        name:'Thursday',
-        slots:{
-          0900:{
-            time:'9:00am',
-            booked:false
+      thursday: {
+        name: 'Thursday',
+        slots: {
+          0900: {
+            time: '9:00am',
+            booked: false
           },
-          1000:{
-            time:'10:00am',
-            booked:false
-          },
-          1100:{
-            time:'11:00am',
-            booked:false
-          },
-          1200:{
-            time:'12:00pm',
-            booked:false
-          },
-          0100:{
-            time:'1:00pm',
-            booked:false
-          },
-          0200:{
-            time:'2:00pm',
-            booked:false
-          },
-          0300:{
-            time:'3:00pm',
-            booked:false
-          },
-          0400:{
-            time:'4:00pm',
-            booked:false
-          },
-          0500:{
-            time:'5:00pm',
-            booked:false
-          },
-          0600:{
-            time:'6:00pm',
-            booked:false
+          0110: {
+            time: '11:00am',
+            booked: false
           }
         }
       },
-      c:{
+      friday:{
         name:'Friday',
         slots:{
           0900:{
             time:'9:00am',
             booked:false
           },
-          1000:{
-            time:'10:00am',
-            booked:false
-          },
-          1100:{
+          0110:{
             time:'11:00am',
-            booked:false
-          },
-          1200:{
-            time:'12:00pm',
-            booked:false
-          },
-          0100:{
-            time:'1:00pm',
-            booked:false
-          },
-          0200:{
-            time:'2:00pm',
-            booked:false
-          },
-          0300:{
-            time:'3:00pm',
-            booked:false
-          },
-          0400:{
-            time:'4:00pm',
-            booked:false
-          },
-          0500:{
-            time:'5:00pm',
-            booked:false
-          },
-          0600:{
-            time:'6:00pm',
             booked:false
           }
         }
       }
     });
+
   };
 
 });
