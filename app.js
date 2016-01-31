@@ -6,8 +6,11 @@ angular.module('scheduleApp', ['firebase'])
   var syncObject = fb.$asObject();
   syncObject.$bindTo($scope, 'days');
 
-  $scope.reset = function() {
+  $scope.sch = function(){
+    console.log('hello friend');
+  };
 
+  $scope.reset = function() {
     fb.$set({
       tuesday: {
         name: 'Tuesday',
