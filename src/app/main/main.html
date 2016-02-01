@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Book me</h1>
+  <div class="row times" ng-repeat='day in days'>
+    <h2>{{day.name}}</h2>
+    <div class="time-slot" ng-repeat='slot in day.slots'>
+      <input type="checkbox" id={{day.name}} ng-model='slot.booked' ng-disabled='slot.booked'>
+      <label for="{{day.name}}" >{{slot.time}}
+      <span ng-if='slot.booked'>Booked</span>
+      <span ng-if='!slot.booked'>Available</span></label>
+    </div>
+  </div>
+  <p class='text-center'>
+    <a href="#" class='btn btn-primary' ng-click='reset()'>Reset</a>
+  </p>
+</div>
