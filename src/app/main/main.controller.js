@@ -10,6 +10,20 @@
     var ref = new Firebase('https://toga.firebaseio.com/days');
     var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope,'days');
+
+    $scope.booked = function(){
+      /* TODO
+      ** Is this going to be for client or owner???
+      **
+        * Needs to
+          - Chang to every week with dates?
+          - Take a name
+          - Take a phone number
+          - accept or decline
+          - Take the reset button off
+      */
+    };
+
     $scope.reset = function(){
       ref.set({
         1:{
