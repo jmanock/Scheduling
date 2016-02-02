@@ -6,12 +6,29 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope, Firebase, $firebaseObject) {
+  function MainController($scope, Firebase, $firebaseObject, moment, toastr) {
     var ref = new Firebase('https://toga.firebaseio.com/days');
     var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope,'days');
 
-    $scope.booked = function(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+
+    if(dd<10){
+      dd='0'+dd;
+    }
+    if(mm<10){
+      mm='0'+mm;
+    }
+    today = mm+'/'+dd+'/'+yyyy;
+
+    var something = moment().format('MMM Do YY'+' dddd');
+
+
+
+    $scope.booked = function(day, time){
       /* TODO
       ** Is this going to be for client or owner???
       **
@@ -22,6 +39,8 @@
           - accept or decline
           - Take the reset button off
       */
+      toastr.info(day,time);
+
     };
 
     $scope.reset = function(){
