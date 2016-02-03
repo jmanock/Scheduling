@@ -31,6 +31,7 @@
         <input type="email" placeholder='Email'>
         <button ng-click='booked(day.name, slot.time)'>Submit</button>
       </form>
+      <span ng-if='slot.booked'>Booked</span>
       </label>
     </div>
   </div>
