@@ -37,7 +37,7 @@
           - accept or decline
           - Take the reset button off
       */
-      // toastr.info(day,time);
+     toastr.info(day,time);
 
 
 

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>Book me</h1>
   <div class="row times" ng-repeat='day in days'>
     <h2>{{day.name}}</h2>
@@ -13,4 +13,25 @@
   <p class='text-center'>
     <a href="#" class='btn btn-primary' ng-click='reset()'>Reset</a>
   </p>
+</div> -->
+<div class="container">
+  <h1>Book Me</h1>
+  <div class="row times" ng-repeat='day in days'>
+    <h2>{{day.name}}</h2>
+    <div class="time-slot" ng-repeat='slot in day.slots'>
+      <input type="checkbox" id={{day.name}} ng-model='slot.booked'>
+      <label for="{{day.name}}">{{slot.time}}
+      <span ng-if='!slot.booked'>Available</span>
+      <form action="" ng-if='slot.booked'>
+
+        <input type="text" placeholder='Name'>
+
+        <input type="text" placeholder='Phone Number'>
+
+        <input type="email" placeholder='Email'>
+        <button ng-click='booked(day.name, slot.time)'>Submit</button>
+      </form>
+      </label>
+    </div>
+  </div>
 </div>
