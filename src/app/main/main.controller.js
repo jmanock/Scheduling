@@ -37,18 +37,17 @@
           - Take the reset button off
           - Put into fb
       */
-      // var something = new Firebase('https://toga.firebaseio.com/appt');
-      // something.update({
-      //   Day:day,
-      //   Time:time,
-      //   User:{
-      //     Name:name,
-      //     Email:email,
-      //     PhoneNumber:phoneNumber
-      //   }
-      // });
+       var something = new Firebase('https://toga.firebaseio.com/booked');
+      something.update({
+        Day:day,
+        Time:time,
+        User:{
+          Name:user.name,
+          Email:user.email,
+          PhoneNumber:user.phoneNumber
+        }
+      });
 
-      console.log(user.name);
     };
 
     $scope.reset = function(){

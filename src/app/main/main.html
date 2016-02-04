@@ -1,22 +1,6 @@
-<!-- <div class="container">
-  <h1>Book me</h1>
-  <div class="row times" ng-repeat='day in days'>
-    <h2>{{day.name}}</h2>
-    <div class="time-slot" ng-repeat='slot in day.slots'>
-      <input type="checkbox" id={{day.name}} ng-model='slot.booked' ng-disabled='slot.booked' ng-click='booked(day.name, slot.time)'>
-      <label for="{{day.name}}" >{{slot.time}}
-      <span ng-if='slot.booked'>Booked</span>
-      <span ng-if='!slot.booked'>Available</span></label>
-    </div>
-
-  </div>
-  <p class='text-center'>
-    <a href="#" class='btn btn-primary' ng-click='reset()'>Reset</a>
-  </p>
-</div> -->
 <div class="container">
   <h1>Book Me</h1>
-  <div class="row times" ng-repeat='day in days'>
+  <div class="row times col-xs-4" ng-repeat='day in days'>
     <h2>{{day.name}}</h2>
     <div class="time-slot" ng-repeat='slot in day.slots'>
       <input type="checkbox" id={{day.name}} ng-model='slot.booked'>
@@ -24,9 +8,9 @@
       <span ng-if='!slot.booked'>Available</span>
       <form action="" ng-if='slot.booked'>
 
-        <input type="name" placeholder='Name' ng-model='user.name'>
+        <input type="name" placeholder='Name' ng-model='user.name' required>
 
-        <input type="phoneNumber" placeholder='Phone Number' ng-model='user.phoneNumber'>
+        <input type="phoneNumber" placeholder='Phone Number' ng-model='user.phoneNumber' required>
 
         <input type="email" placeholder='Email' ng-model='user.email'>
         <button ng-click='booked(day.name, slot.time, user)'>Submit</button>
