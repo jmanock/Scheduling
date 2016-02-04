@@ -26,7 +26,8 @@
     today = mm+'/'+dd+'/'+yyyy;
 
     // var something = moment().format('MMM Do YY'+' dddd');
-    $scope.booked = function(day, time){
+
+    $scope.booked = function(day, time, user){
       /* TODO
       ** Is this going to be for client or owner???
       **
@@ -36,10 +37,18 @@
           - Take the reset button off
           - Put into fb
       */
+      // var something = new Firebase('https://toga.firebaseio.com/appt');
+      // something.update({
+      //   Day:day,
+      //   Time:time,
+      //   User:{
+      //     Name:name,
+      //     Email:email,
+      //     PhoneNumber:phoneNumber
+      //   }
+      // });
 
-
-
-
+      console.log(user.name);
     };
 
     $scope.reset = function(){
