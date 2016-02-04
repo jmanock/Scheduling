@@ -32,12 +32,11 @@
       **
         * Needs to
           - Chang to every week with dates?
-          - Take a name
-          - Take a phone number
           - accept or decline
           - Take the reset button off
+          - Put into fb
       */
-     toastr.info(day,time);
+
 
 
 

@@ -30,9 +30,11 @@
 
         <input type="email" placeholder='Email'>
         <button ng-click='booked(day.name, slot.time)'>Submit</button>
+        <button ng-click='cancle()'>Cancel</button>
       </form>
-      <span ng-if='slot.booked'>Booked</span>
+
       </label>
     </div>
   </div>
+  <p class='text-center'><a href="#" ng-click='reset()' class='btn btn-primary'>Reset</a></p>
 </div>
