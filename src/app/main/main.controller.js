@@ -29,13 +29,11 @@
 
     $scope.booked = function(day, time, user){
       /* TODO
-      ** Is this going to be for client or owner???
-      **
         * Needs to
-          - Chang to every week with dates?
-          - accept or decline
+          - style
+          
           - Take the reset button off
-          - Put into fb
+
       */
        var something = new Firebase('https://toga.firebaseio.com/booked');
       something.update({
