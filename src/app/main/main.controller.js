@@ -25,13 +25,15 @@
     }
     today = mm+'/'+dd+'/'+yyyy;
 
-    // var something = moment().format('MMM Do YY'+' dddd');
+    //var something = moment().format('MMM Do YY'+' dddd');
+    var something = moment().format('dddd');
+
 
     $scope.booked = function(day, time, user){
       /* TODO
         * Needs to
           - style
-          
+
           - Take the reset button off
 
       */
@@ -188,5 +190,9 @@
       });
     };
 
+    if(something === 'Saturday'){
+       $scope.reset();
+    }
   }
+
 })();
