@@ -7,38 +7,23 @@
 
   /** @ngInject */
   function MainController($scope, Firebase, $firebaseObject, moment, toastr) {
-
+    var booking = new Firebase('https://toga.firebaseio.com/booked');
     var ref = new Firebase('https://toga.firebaseio.com/days');
     var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope,'days');
 
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yyyy = today.getFullYear();
-
-    if(dd<10){
-      dd='0'+dd;
-    }
-    if(mm<10){
-      mm='0'+mm;
-    }
-    today = mm+'/'+dd+'/'+yyyy;
-
-    //var something = moment().format('MMM Do YY'+' dddd');
-    var something = moment().format('dddd');
+    var days = moment().format('dddd');
 
 
     $scope.booked = function(day, time, user){
       /* TODO
         * Needs to
           - style
-
-          - Take the reset button off
-
+          - have to change slots.booked to true on submit
+          - needs to check to make sure info is filled out
       */
-       var something = new Firebase('https://toga.firebaseio.com/booked');
-      something.update({
+
+      booking.update({
         Day:day,
         Time:time,
         User:{
@@ -47,6 +32,7 @@
           PhoneNumber:user.phoneNumber
         }
       });
+      console.log($scope.open($index));
 
     };
     $scope.open = false;
@@ -191,8 +177,9 @@
       });
     };
 
-    if(something === 'Saturday'){
+    if(days === 'Saturday'){
        $scope.reset();
+       booking.remove();
     }
   }
 

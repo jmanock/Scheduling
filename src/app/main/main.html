@@ -27,16 +27,16 @@
   <div class="row times col-xs-4" ng-repeat='day in days'>
     <h2>{{day.name}}</h2>
     <div class="time-slot" ng-repeat='slot in day.slots'>
-      <label for="{{day.name}}">{{slot.time}}
+      <label for="{{day.name}}">{{slot.time}}</label>
       <button id='{{day.name}}' ng-click='open = !open' class='btn btn-primary'>Book</button>
-      <span ng-if='!slot.booked'>Abailable</span>
+      <span ng-if='!slot.booked'>Available</span>
+      <span ng-if='slot.booked'>Booked</span>
       <form action="" ng-show='open'>
         <input type="name" placeholder='Name' ng-model='user.name' required>
         <input type="phoneNumber" placeholder='Phone Number' ng-model='user.phoneNumber' required>
         <input type="email" placeholder='Email' ng-model='user.email'>
-        <button ng-click='bookded(day.name, slot.time, user)'>Submit</button>
+        <button ng-click='booked(day.name, slot.time, user, slot.booked=true, open = !open)'>Submit</button>
       </form>
-    </label>
     </div>
   </div>
 </div>
