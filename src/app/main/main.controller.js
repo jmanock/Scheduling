@@ -49,6 +49,7 @@
       });
 
     };
+    $scope.open = false;
 
     $scope.reset = function(){
       ref.set({
