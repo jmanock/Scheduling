@@ -23,16 +23,16 @@
           - needs to check to make sure info is filled out
       */
 
-      booking.update({
-        Day:day,
-        Time:time,
-        User:{
-          Name:user.name,
-          Email:user.email,
-          PhoneNumber:user.phoneNumber
-        }
-      });
-      console.log($scope.open($index));
+      // booking.update({
+      //   Day:day,
+      //   Time:time,
+      //   User:{
+      //     Name:user.name,
+      //     Email:user.email,
+      //     PhoneNumber:user.phoneNumber
+      //   }
+      // });
+
 
     };
     $scope.open = false;
@@ -177,7 +177,7 @@
       });
     };
 
-    if(days === 'Saturday'){
+    if(days === 'Wednesday'){
        $scope.reset();
        booking.remove();
     }
