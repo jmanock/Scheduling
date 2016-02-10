@@ -14,19 +14,18 @@
 
     var days = moment().format('dddd');
 
-    $scope.test = function(){
-      console.log('hello friend');
-    };
-    $scope.booked = function(day, time, user,x){
+    $scope.booked = function(day, time, user){
       /* TODO
         * Needs to
           - style
-          - have to change slots.booked to true on submit
-          - needs to check to make sure info is filled out
+          - update the whole list add user and booked to true
+          -
+
       */
 
+
       if(user !== undefined){
-        x = true;
+
         booking.update({
           Day:day,
           Time:time,
@@ -39,16 +38,6 @@
       }else{
         toastr.error('something is missing');
       }
-      // booking.update({
-      //   Day:day,
-      //   Time:time,
-      //   User:{
-      //     Name:user.name,
-      //     Email:user.email,
-      //     PhoneNumber:user.phoneNumber
-      //   }
-      // });
-
 
     };
     $scope.open = false;
@@ -193,7 +182,7 @@
       });
     };
 
-    if(days === 'Saturday'){
+    if(days === 'Wednesday'){
        $scope.reset();
        booking.remove();
     }
