@@ -15,29 +15,11 @@
     var days = moment().format('dddd');
 
     $scope.booked = function(day, time, user){
-      /* TODO
-        * Needs to
-          - style
-          - update the whole list add user and booked to true
-          -
-
+      /* Needs TODO
+          * Click book take Name, Phone Number, and Email
+          * Change from Avaiable to Booked
+          * Update Fb
       */
-
-
-      if(user !== undefined){
-
-        booking.update({
-          Day:day,
-          Time:time,
-          User:{
-            Name:user.name,
-            Email:user.email,
-            PhoneNumber:user.phoneNumber
-          }
-        });
-      }else{
-        toastr.error('something is missing');
-      }
 
     };
     $scope.open = false;
