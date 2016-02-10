@@ -14,8 +14,10 @@
 
     var days = moment().format('dddd');
 
-
-    $scope.booked = function(day, time, user){
+    $scope.test = function(){
+      console.log('hello friend');
+    };
+    $scope.booked = function(day, time, user,x){
       /* TODO
         * Needs to
           - style
@@ -23,6 +25,20 @@
           - needs to check to make sure info is filled out
       */
 
+      if(user !== undefined){
+        x = true;
+        booking.update({
+          Day:day,
+          Time:time,
+          User:{
+            Name:user.name,
+            Email:user.email,
+            PhoneNumber:user.phoneNumber
+          }
+        });
+      }else{
+        toastr.error('something is missing');
+      }
       // booking.update({
       //   Day:day,
       //   Time:time,
@@ -177,7 +193,7 @@
       });
     };
 
-    if(days === 'Wednesday'){
+    if(days === 'Saturday'){
        $scope.reset();
        booking.remove();
     }
