@@ -1,11 +1,10 @@
 (function() {
   'use strict';
-
   angular
     .module('scheduling')
     .controller('MainController', MainController);
 
-  /** @ngInject */
+ /** @ngInject */
   function MainController($scope, Firebase, $firebaseObject, moment, toastr) {
     var booking = new Firebase('https://toga.firebaseio.com/booked');
     var ref = new Firebase('https://toga.firebaseio.com/days');
@@ -14,13 +13,11 @@
 
     var days = moment().format('dddd');
 
-    $scope.booked = function(day, time, user){
+    $scope.booked = function(day, time, user,x, $index){
       /* Needs TODO
-          * Click book take Name, Phone Number, and Email
-          * Change from Avaiable to Booked
-          * Update Fb
-      */
 
+      */
+      console.log(day, time, user, x, $index);
 
 
 
