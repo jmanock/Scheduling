@@ -21,7 +21,7 @@
           * Update Fb
       */
 
-      
+
 
 
     };
@@ -167,7 +167,7 @@
       });
     };
 
-    if(days === 'Wednesday'){
+    if(days === 'Saturday'){
        $scope.reset();
        booking.remove();
     }
