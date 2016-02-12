@@ -13,11 +13,11 @@
 
     var days = moment().format('dddd');
 
-    $scope.booked = function(day, time, user,x, $index){
+    $scope.booked = function(){
       /* Needs TODO
 
       */
-      console.log(day, time, user, x, $index);
+
 
 
 
