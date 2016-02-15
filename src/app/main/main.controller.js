@@ -15,13 +15,13 @@
 
     $scope.booked = function(){
       /*
-        * Check to see if everything entered is there
-        * Change Available to Booked
-        * Save to FB
+        * Only open one book at a time
+        * Style
+        * disable from rebooking
       */
 
     };
-    
+
 
     $scope.reset = function(){
       ref.set({
