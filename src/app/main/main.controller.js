@@ -14,10 +14,12 @@
     var days = moment().format('dddd');
 
     $scope.booked = function(){
-      /* Needs TODO
-
+      /*
+        * Check to see if everything entered is there
+        * Change Available to Booked
+        * Save to FB
       */
-
+      console.log('Hello Friend');
 
 
 
