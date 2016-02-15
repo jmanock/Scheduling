@@ -4,7 +4,11 @@
     <div class="col-xs-4 text-center" ng-repeat='day in days'>
       <h2>{{day.name}}</h2>
       <div class="time-slot" ng-repeat='slot in day.slots'>
-        <input type="checkbox" ng-model='slot.booked'>
+        <button ng-click='open = !open'>Book</button>
+        <form action="" ng-show='open' >
+          <input type="Name" placeholed='Name'>
+          <input type="phoneNumber" placeholder='Phone Number'>
+        </form>
         <label for="day.name">{{slot.time}}
           <span ng-if='slot.booked'>Booked</span>
           <span ng-if='!slot.booked'>Available</span>
