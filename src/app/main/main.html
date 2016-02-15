@@ -5,10 +5,10 @@
       <h2>{{day.name}}</h2>
       <div class="time-slot" ng-repeat='slot in day.slots'>
         <button ng-click='open = !open'>Book</button>
-        <form action="" ng-show='open' >
+        <form action="" ng-show='open' name='form'>
           <input type="Name" placeholder='Name' required ng-model='slot.name'>
           <input type="phoneNumber" placeholder='Phone Number' required ng-model='slot.phoneNumber'>
-          <input type="checkbox" ng-model='slot.booked'>
+          <input type="checkbox" ng-model='slot.booked' ng-disabled='form.$invalid'>
         </form>
         <label for="day.name">{{slot.time}}
           <span ng-if='slot.booked'>Booked</span>
