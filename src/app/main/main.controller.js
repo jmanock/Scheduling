@@ -19,12 +19,9 @@
         * Change Available to Booked
         * Save to FB
       */
-      console.log('Hello Friend');
-
-
 
     };
-    $scope.open = false;
+    
 
     $scope.reset = function(){
       ref.set({
