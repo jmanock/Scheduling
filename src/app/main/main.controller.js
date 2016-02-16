@@ -18,6 +18,7 @@
         * Only open one book at a time
         * Style
         * disable from rebooking
+        * color
       */
 
     };
